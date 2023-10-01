@@ -1,127 +1,101 @@
 # Airbnb-Price-Prediction 
 
-The purpose of this project is to predict the price of Airbnb rentals based on various features of the properties listed on the platform. The code in this repository is written in Python and uses several machine learning algorithms to train and test a predictive model.
+## Introduction
+In today's fast-paced world, the way we travel and seek accommodations has undergone a remarkable transformation, thanks to platforms like Airbnb. This dynamic marketplace has empowered property owners and travellers, offering a diverse range of lodging options. However, one enduring challenge is setting the right price for a listing. Hosts aspire to optimize their earnings while ensuring competitive pricing, while guests seek value for their money. Balancing these interests can be intricate, and that's where the motivation for Airbnb price prediction comes in.
 
-# Dataset
+## Motivation 
+To harness the power of data science and machine learning to provide more accurate and data-driven pricing strategies for Airbnb hosts and guests. By developing predictive models that factor in myriad variables such as location, property type, and market dynamics, the objective is to help hosts maximize their income and guests find fair deals. In this exploration of Airbnb price prediction, we will delve into methodologies, data sources, and emerging trends, shedding light on how technology is enhancing the overall Airbnb experience for both hosts and travellers.
 
-The Airbnb dataset includes 29 variables and 74111 observations. The variables which are listed below are the final variables in the dataset.
 
- - Room Type: This includes the category of space available for rent. 
+# Installation Guide
 
- - Property Type: This defines the kind of housing the property.
+This guide provides step-by-step instructions on how to install and set up the Airbnb Price Prediction project. You can choose to install it either directly from GitHub or using a Docker container from DockerHub.
 
- - City: It is the name of the city/town where our property is located.
+## Prerequisites
 
- - Latitude: It is the exact coordinates where our property is located.
-
- - Longitude: It is the exact coordinates where our property is located,
-
- - Amenities: These are the various features available at the rental that increase the desirability of the rental
-
- - Number of Reviews: It is the number of testimonials that the previous customers had provided after using the property.
-
- - First Review: It is the date of the very first review from the customer posted.
-
- - Last Review: It is the date of the latest review from the customer posted.
-
- - Review Score Rating: It is the collective score of all the previous reviews posted.
-
- - Thumbnail URL: It is the hyperlink of the display picture of the property available online.
-
- - zip code: It is the pin code of the location. 
-
- - Host Profile pic: It is the presence of the actual picture of the owner/host that owns the property.
-
- - Host Identity Verified: It tells if the owner/host is a real person verified by the authorities.
-
- - Host Response rate: It is the probability of the owner/host responding to your message if you decide to send one.
-
- - Host Since: It is the time period since when he had been the host.
-
- - Name: It is the name of the property.
-
- - Neighborhood: It is the local street/town place that the neighborhood is located in.
-
- - Accommodates The number of people that could comfortably use the rental.
-
- - Bathrooms: It indicates the number of bathrooms available on the rental.
-
- - Cancellation Policy: This tells whether the incentive that was submitted to confirm the rental will be reliably sent back in case of cancellation.
-
- - Cleaning Fee: It is the basic maintenance fee charged along with the rental fee.
-
- - Instant Bookable: It indicates how much delay it takes to confirm the rental for your use or if it is bookable at the last moment.
-
- - Review Score Rating: Gives the data on the experience of previous users.
-
- - Description: It is a very short but concise overview of the rental property.
-
- - Bedrooms: It indicates the number of bedrooms available on the rental.
-
- - Beds: It indicates the number of total beds available on the rental.
-
- - Bed Type: It is the type of bed available in the rental. 
-
- - Log Price: It refers to the natural logarithm of a given price. It is calculated by taking the logarithm of the price and can be used to normalize price data and make it easier to analyze.
-
-# Installation
-
-To run this code, you need to have Python installed on your machine. Additionally, you will need to install several Python packages, including:
+Before you begin, make sure you have the following prerequisites installed on your system:
 
  - Numpy
-
  - Pandas
-
  - Seaborn
-
  - Matplotlib
-
  - Scikit-learn
-
+ - xgboost
+ - Flask
+ - Pillow
  - Catboost
+ - DVC
 
- - Xgboost
+## Installation Steps
 
-You can install these packages using the pip package manager.
+### Option 1: Installation from GitHub
 
-# Usage
+Follow these steps to install and set up the project directly from the GitHub repository:
 
-To use this Airbnb analysis project, follow these steps:
+1. **Clone the Repository**
+   - Open your terminal or command prompt.
+   - Navigate to the directory where you want to install the project.
+   - Run the following command to clone the GitHub repository:
+     ```
+     git clone https://github.com/KalyanMurapaka45/Airbnb-Price-Prediction.git
+     ```
 
-→ Clone the project repository to your local machine.
+2. **Create a Virtual Environment** (Optional but recommended)
+   - It's a good practice to create a virtual environment to manage project dependencies. Run the following command:
+     ```
+     conda create -p <Environment_Name> python==<python version> -y
+     ```
 
-→ Install the required dependencies listed in the requirements.txt file. 
+3. **Activate the Virtual Environment** (Optional)
+   - Activate the virtual environment based on your operating system:
+       ```
+       conda activate <Environment_Name>/
+       ```
 
-→ You can do this by running the following command in your terminal:
+4. **Install Dependencies**
+   - Navigate to the project directory:
+     ```
+     cd [project_directory]
+     ```
+   - Run the following command to install project dependencies:
+     ```
+     pip install -r requirements.txt
+     ```
 
-pip install -r requirements.txt
+5. **Run the Project**
+   - Start the project by running the appropriate command.
+     ```
+     python app.py
+     ```
 
-→ Open the Jupyter notebook Airbnb_Analysis.ipynb in Jupyter Notebook or Jupyter Lab.
+6. **Access the Project**
+   - Open a web browser or the appropriate client to access the project.
+  
+<br><br>
+### Option 2: Installation from DockerHub
 
-→ Follow the step-by-step analysis in the notebook, running each cell to execute the code and generate the output.
+If you prefer to use Docker, you can install and run the project using a Docker container from DockerHub:
 
+1. **Pull the Docker Image**
+   - Open your terminal or command prompt.
+   - Run the following command to pull the Docker image from DockerHub:
+     ```
+     docker pull kalyan45/airbnb-app
+     ```
 
-# Model Training and Evaluation
+2. **Run the Docker Container**
+   - Start the Docker container by running the following command, mapping any necessary ports:
+     ```
+     docker run -p 5000:5000 kalyan45/airbnb-app
+     ```
 
-The final section of the code trains several machine learning models on the preprocessed data and evaluates their performance using various metrics such as mean squared error and R-squared. The models used in this project include:
+3. **Access the Project**
+   - Open a web browser or the appropriate client to access the project.
 
-Linear Regression
+## Troubleshooting
 
-Polynomial Regression
+- If you encounter any issues during the installation process, Contact me at ```kalyanmurapaka274@gmail.com```
 
-CatBoost Regressor
-
-Gradient Boosting Regressor
-
-XGBoost Regressor
-
-Random Forest Regressor
-
-The code uses a grid search algorithm to optimize the hyperparameters of each model and cross-validation to evaluate the performance of each model. Finally, the code selects the best performing model and uses it to predict the prices of new Airbnb listings.
-
-Here is the Model Working Flow
-
-![image](https://user-images.githubusercontent.com/101493756/230591497-f8b94043-ff34-47ba-ac54-16b99771d27c.png)
 
 # Contributing
 
